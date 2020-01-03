@@ -1,0 +1,18 @@
+{# ------------------------------------------------------------------------------ #}
+{# Renders giver argument capitalized. #}
+{# ------------------------------------------------------------------------------ #}
+{% macro render_names(name) %}
+    <li>{{ name|capitalize }}</li>
+{% endmacro %}
+
+{# ------------------------------------------------------------------------------ #}
+{# Rendersfield with label, id, and any number of attributes. #}
+{# ------------------------------------------------------------------------------ #}
+{% macro render_text_field(field)%}
+    {{ field.label(for=field.label.text) }}
+    {{ field(class="form-control", for=field.label.text,  **kwargs)|safe }}
+    {% for error in field.errors %}
+        <small class="text-danger">{{ error }}</small>
+    {% endfor %}
+{% endmacro %}
+

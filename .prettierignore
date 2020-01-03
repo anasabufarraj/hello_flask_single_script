@@ -1,0 +1,2 @@
+# Exclude files from formatting.
+/templates/_macros.html

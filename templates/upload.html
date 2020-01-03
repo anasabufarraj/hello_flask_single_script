@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Upload{% endblock %}
+
+{% block page_content %}
+    {# TODO: in HTML5, the action attribute is no longer required. #}
+    <form novalidate class="mt-4" method="post" enctype="multipart/form-data" action="{{ url_for('upload') }}">
+        <div class="form-group">
+            {{ form.hidden_tag() }}
+            {{ form.photo.label }} {{ form.photo(class="form-control") }}
+            {% for error in form.photo.errors %}
+                <small class="text-danger">{{ error }}</small>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-dark") }}
+        </div>
+    </form>
+{% endblock %}

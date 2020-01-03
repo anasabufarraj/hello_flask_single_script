@@ -1,0 +1,22 @@
+{% extends 'bootstrap/base.html' %}
+{% block html_attribs %} lang="en" {% endblock %}
+{% block title %}Hello!{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="page-header my-3">
+            <img class="icon mr-2" src="{{ url_for('static', filename='favicon.png') }}" alt="icon" width="32">
+            <a href="/">Home</a><span>&nbsp; | &nbsp;</span>
+            <a href="/register">Register</a>&nbsp; | &nbsp;</span>
+            <a href="/upload">Upload</a>
+            {% block page_content %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

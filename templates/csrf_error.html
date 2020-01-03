@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}CSRF Validation Fails{% endblock %}
+
+{% block page_content %}
+    <div class="page-header my-3">
+        <h1>Cross-Site Response Forgery Validation Fails</h1>
+        <p>{{ reason }}</p>
+    </div>
+{% endblock %}

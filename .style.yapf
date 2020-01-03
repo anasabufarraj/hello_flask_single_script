@@ -1,0 +1,6 @@
+[style]
+# YAPF uses the PEP8 style
+based_on_style = PEP8
+column_limit = 100
+spaces_before_comment = 2
+split_before_logical_operator = true

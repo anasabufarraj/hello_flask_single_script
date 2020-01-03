@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as macros %}
+
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
+    {{ moment.locale('en') }}
+{% endblock %}
+
+{% block page_content %}
+    <div class="page-header mt-3">
+        <h1>Hello!</h1>
+        <ul>
+
+            {% for name in NAMES %} {{ macros.render_names(name) }} {% endfor %}
+        </ul>
+    </div>
+    <hr>
+    <div>
+        <p>{{ moment(now).format('llll') }}<br>
+            <small>{{ moment(now).fromNow(refresh=True) }}</small>
+        </p>
+    </div>
+{% endblock %}

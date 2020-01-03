@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Thank You!{% endblock %}
+
+{% block page_content %}
+    <div class="page-header my-3">
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-warning">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="page-header my-3">
+        <h1>Thank you!</h1>
+        <hr>
+        <small>
+            Credentials:<br>
+            <b>Username:</b> {{ username }}<br>
+            <b>Password:</b> {{ password }}<br>
+        </small>
+    </div>
+{% endblock %}
